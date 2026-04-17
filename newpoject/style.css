@@ -1,0 +1,226 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Layout --- */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.app-header p {
+    color: var(--text-muted);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- Cards --- */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+/* --- Inputs & Buttons --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+input, select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    color: white;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+/* --- Lists --- */
+.budget-display {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+.list-header h2 {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.total-text {
+    color: var(--danger-color);
+}
+
+ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    background: #f9fafb;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.expense-info {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* --- Chart --- */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* --- Analysis & AI --- */
+.analysis-box {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+.alert-box {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert-box.neutral { background: #e0f2fe; color: #0284c7; }
+.alert-box.warning { background: #fef08a; color: #854d0e; }
+.alert-box.danger { background: #fee2e2; color: #991b1b; }
+.alert-box.success { background: #dcfce7; color: #166534; }
+
+.ai-screen {
+    background-color: #1e293b;
+    color: #38bdf8;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 120px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    white-space: pre-line;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}

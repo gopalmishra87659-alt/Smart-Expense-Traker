@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header class="app-header">
+        <h1>💳 Smart Expense Tracker</h1>
+        <p>Manage your finances with AI insights</p>
+    </header>
+
+    <div class="dashboard-grid">
+        <div class="column">
+            <div class="card budget-card">
+                <h2>💰 Set Monthly Budget</h2>
+                <div class="input-group">
+                    <input type="number" id="budgetInput" placeholder="e.g., 50000">
+                    <button class="btn-primary" onclick="setBudget()">Set Budget</button>
+                </div>
+                <h3 class="budget-display">Current Budget: ₹<span id="budgetDisplay">0</span></h3>
+            </div>
+
+            <div class="card add-expense-card">
+                <h2>📝 Add Expense</h2>
+                <div class="input-group">
+                    <input type="number" id="amount" placeholder="Amount (₹)">
+                    <select id="category">
+                        <option value="food">🍔 Food</option>
+                        <option value="travel">✈️ Travel</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="bills">🧾 Bills</option>
+                        <option value="rent"> RENT</option>
+                        <option value="others">📦 Others</option>
+                    </select>
+                    <button class="btn-primary" onclick="addExpense()">Add</button>
+                </div>
+            </div>
+
+            <div class="card list-card">
+                <div class="list-header">
+                    <h2>📋 Expenses</h2>
+                    <h2 class="total-text">Total: ₹<span id="total">0</span></h2>
+                </div>
+                <ul id="expenseList">
+                    </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card chart-card">
+                <h2>📊 Spending Breakdown</h2>
+                <div class="chart-container">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card analysis-card">
+                <h2>📈 Category Analysis</h2>
+                <div id="analysis" class="analysis-box">No expenses yet.</div>
+                <div id="suggestion" class="alert-box neutral">Start adding expenses!</div>
+            </div>
+
+            <div class="card ai-card">
+                <h2>🤖 AI Financial Advisor</h2>
+                <div class="ai-screen">
+                    <div id="aiAdvice" class="typing-text">Add expenses for AI insights...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
